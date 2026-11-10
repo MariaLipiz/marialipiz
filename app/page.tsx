@@ -1,69 +1,87 @@
-import Image from "next/image";
+import NewsletterForm from "../Components/NewsletterForm";
+import ResourceAnchor from "../Components/ResourceAnchor";
+import Link from "next/link";
+
+const resources = [
+  { number: "01", type: "Calculadora", title: "¿Cuánto cobras realmente por hora?" },
+  { number: "02", type: "Plantilla", title: "De clases sueltas a una cuota mensual" },
+  { number: "03", type: "Guía", title: "Qué clases podrías pasar a grupo" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <main>
+        <section className="hero-section" aria-labelledby="headline">
+          <div className="contenedor hero-content">
+            <div className="offer">
+              <h1 className="titulo-h1" id="headline">
+                <span className="headline-line">Tienes <span className="resaltado-azul-pastel">alumnos,</span></span>
+                <span className="headline-line">pero no tienes <span className="resaltado-rojo-pastel">estabilidad</span>.</span>
+              </h1>
+              <p className="texto intro">
+                Subir precios te da pánico, llega el verano y tus ingresos caen en picado, y entre clases, correcciones y 
+                mensajes echas mas horas que un reloj.
+              </p>
+              <p className="texto intro intro-emphasis">
+                Apúntate abajo y recibe gratis la guía en la que explico <strong> cómo conseguir ingresos estables sin seguir llenando tu agenda y sin cancelaciones👇</strong>
+              </p>
+              <NewsletterForm />
+            </div>
+          </div>
+        </section>
+
+        {/* Secciones conservadas como código inactivo:
+        <section className="resource-section" aria-labelledby="resources-heading">
+          <div className="contenedor resource-content">
+            <div className="resource-heading">
+              <span className="resource-kicker texto-pequeno">DENTRO DE LA CARPETA</span>
+              <h2 className="titulo-h2 section-heading" id="resources-heading">
+                <span className="resource-heading-line">¿Y si pudieras ganar más sin</span>{" "}
+                <span className="resource-heading-line">tener que dar clase <span className="resaltado-amarillo-pastel">los sábados</span>?</span>
+              </h2>
+              <p className="texto resource-intro">
+                Empieza por echar cuentas. Aquí tienes tres recursos para calcular cuánto te sale la hora, poner precio a una cuota mensual y decidir qué clases podrías dar en grupo
+              </p>
+            </div>
+            <div className="resource-grid">
+              {resources.map((resource) => (
+                <ResourceAnchor className="resource-card" key={resource.number}>
+                  <span className="resource-number texto-pequeno">{resource.number}</span>
+                  <span className="resource-type texto-pequeno">{resource.type}</span>
+                  <h3 className="titulo-h3 resource-title">{resource.title}</h3>
+                  <span className="resource-arrow" aria-hidden="true">→</span>
+                </ResourceAnchor>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="closing-section" aria-labelledby="closing-heading">
+          <div className="contenedor closing-content">
+            <h2 className="titulo-h2 closing-heading" id="closing-heading">
+              <span className="closing-heading-line">¿Te guardo un hueco el jueves?</span>{" "}
+              <span className="closing-heading-line">Mejor <span className="resaltado-verde-pastel">te mando la carpeta</span>.</span>
+            </h2>
+            <p className="texto closing-copy">Déjame tu email y te envío los tres recursos gratis.</p>
+            <ResourceAnchor className="boton-principal boton-claro">
+              Envíame la carpeta →
+            </ResourceAnchor>
+          </div>
+        </section>
+        */}
       </main>
-    </div>
+
+      <footer className="site-footer landing-footer">
+        <div className="contenedor footer-content">
+          <div className="footer-signature">
+            <Link className="brand" href="/" aria-label="María Lipiz, inicio">maría lípiz.</Link>
+          </div>
+          <nav className="footer-links texto-pequeno" aria-label="Enlaces del pie de página">
+            <Link href="/aviso-legal">Legal</Link>
+          </nav>
+        </div>
+      </footer>
+    </>
   );
 }
