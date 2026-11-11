@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "María Lipiz · Recursos gratis para profes particulares",
   description: "Recursos para vivir muy bien de tus clases particulares sin tener que dar cada vez más.",
+  icons: {
+    icon: [{ url: "/icon.svg?v=2", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
