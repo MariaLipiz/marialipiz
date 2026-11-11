@@ -151,6 +151,7 @@ button, input { font: inherit; }
 .confirm-page { flex: 1; width: 100%; max-width: none; padding-block: clamp(1.5rem, 4vw, 3rem); }
 .confirm-content { width: 100%; max-width: 65ch; margin-inline: auto; }
 .confirm-header { display: flex; width: min(100%, 65rem); height: var(--site-header-height); flex: 0 0 auto; align-items: center; justify-content: flex-end; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.5rem); }
+.confirm-header > .brand { font-size: clamp(2.1rem, 3.2vw, 2.5rem); font-weight: 720; }
 .confirm-copy { display: grid; gap: 0.9rem; color: var(--color-gris-oscuro); }
 .confirm-copy .titulo-h1 { margin: 0 0 0.15rem; text-align: left; }
 .confirm-copy .texto { color: var(--color-gris-oscuro); overflow-wrap: anywhere; }
@@ -163,6 +164,24 @@ button, input { font: inherit; }
 .confirmado-page { display: grid; min-height: 100svh; place-items: center; padding: clamp(1.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2.5rem); background: var(--color-blanco); }
 .confirmado-page .titulo-h1 { width: min(100%, 60rem); color: var(--color-negro); }
 .confirmado-page .resaltado-verde-pastel { color: inherit; background-image: linear-gradient(transparent 67%, var(--color-verde-menta-suave) 67%); background-repeat: no-repeat; background-position: 0 0; background-size: 100% 100%; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+@media (min-width: 1600px) {
+  :root {
+    --content-width: 92rem;
+    --site-header-height: clamp(3.75rem, 4vw, 5rem);
+  }
+
+  .contenedor { padding-inline: clamp(2.5rem, 4vw, 5rem); }
+  .brand { font-size: clamp(1.5rem, 2vw, 2rem); }
+  .titulo-h1 { max-width: 78rem; font-size: clamp(3.75rem, 5vw, 6rem); }
+  .texto { font-size: clamp(1.15rem, 1.4vw, 1.45rem); }
+  .intro { max-width: 72rem; margin-top: clamp(1.5rem, 2.5vw, 2.25rem); }
+  .intro-emphasis { margin-top: clamp(0.65rem, 1vw, 1rem); }
+  .newsletter-form { width: min(100%, 36rem); gap: 1.25rem; margin-top: clamp(2rem, 3vw, 3rem); padding: clamp(1.75rem, 3vw, 2.5rem); }
+  .newsletter-form .email-label { font-size: 1.05rem; }
+  .campo-formulario { min-height: 64px; padding-inline: 1.1rem; font-size: 1.1rem; }
+  .boton-principal { min-height: 64px; padding-inline: 1.5rem; font-size: clamp(1.1rem, 1.2vw, 1.25rem); }
+}
 
 @media (max-width: 620px) {
   .titulo-h1 { font-size: clamp(2rem, 9vw, 3.3rem); }
