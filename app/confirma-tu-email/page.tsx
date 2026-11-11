@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteFooter from "../../Components/SiteFooter";
 
 export const metadata = {
   title: "Confirma tu email · María Lipiz",
@@ -40,13 +41,7 @@ export default function ConfirmaTuEmailPage() {
       </div>
 
     </main>
-      <footer className="site-footer confirm-footer">
-        <div className="footer-links texto-pequeno">
-          <span>María Lipiz</span>
-          <span aria-hidden="true">·</span>
-          <Link href="/aviso-legal">Legal</Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

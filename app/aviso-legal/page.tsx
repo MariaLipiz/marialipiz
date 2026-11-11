@@ -1,10 +1,12 @@
 import Link from "next/link";
 import NewsletterForm from "../../Components/NewsletterForm";
+import SiteFooter from "../../Components/SiteFooter";
 
 export default function AvisoLegal() {
   return (
-    <main className="contenedor legal-page">
-      <article>
+    <>
+      <main className="contenedor legal-page">
+        <article>
         <h1 className="titulo-h1">Aviso legal</h1>
 
         <p className="texto legal-details">
@@ -43,14 +45,16 @@ export default function AvisoLegal() {
           <h2 className="titulo-h2">Legislación aplicable</h2>
           <p className="texto">Este aviso legal se rige por la legislación española. Para cualquier controversia, y salvo norma imperativa en contrario, las partes se someten a los juzgados y tribunales del domicilio del titular.</p>
         </section>
-      </article>
+        </article>
 
-      <section className="legal-newsletter" aria-labelledby="legal-newsletter-heading">
+        <section className="legal-newsletter" aria-labelledby="legal-newsletter-heading">
         <h2 className="titulo-h2" id="legal-newsletter-heading">Si te mola leer este tostón, imagínate lo que disfrutarás leyendo el newsletter y viendo los recursos gratuitos</h2>
         <p className="texto legal-newsletter-copy">Un email diario sobre cómo ser libre enseñando mates, inglés o flauta de pan, bastante menos aburrido que esta página. Según te suscribes, te llevas la carpeta de recursos gratuitos.</p>
         <NewsletterForm />
         
-      </section>
-    </main>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
