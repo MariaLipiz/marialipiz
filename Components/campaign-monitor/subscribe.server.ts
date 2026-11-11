@@ -19,16 +19,22 @@ export async function subscribeToCampaignMonitor(email: string): Promise<Subscri
       headers: { Authorization: `Basic ${authorization}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         EmailAddress: email,
-        Resubscribe: false,
-        RestartSubscriptionAutoresponders: false,
+        Resubscribe: true,
+        RestartSubscriptionBasedAutoresponders: true,
         ConsentToTrack: "No",
       }),
       signal: controller.signal,
       cache: "no-store",
     });
-    if (!response.ok) return { ok: false, reason: "provider" };
+    if (!response.ok) {
+      // Keep provider details in server logs only; never expose them or subscriber data to the browser.
+      console.error("[newsletter] Campaign Monitor rejected the request", { status: response.status });
+      return { ok: false, reason: "provider" };
+    }
     return { ok: true };
-  } catch {
+  } catch (error) {
+    const timedOut = error instanceof Error && error.name === "AbortError";
+    console.error(timedOut ? "[newsletter] Campaign Monitor request timed out" : "[newsletter] Campaign Monitor network request failed");
     return { ok: false, reason: "network" };
   } finally {
     clearTimeout(timeout);
