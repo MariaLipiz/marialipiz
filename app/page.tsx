@@ -20,8 +20,7 @@ export default function Home() {
                 <span className="headline-line">pero no tienes <span className="resaltado-rojo-pastel">estabilidad</span>.</span>
               </h1>
               <p className="texto intro">
-                Subir precios te da pánico, llega el verano y tus ingresos caen en picado, y entre clases, correcciones y 
-                mensajes echas mas horas que un reloj.
+                Tus alumnos te cancelan horas que ya no puedes ocupar, llega el verano y tus ingresos caen en picado, y entre clases, correcciones y mensajes echas mas horas que un reloj.
               </p>
               <p className="texto intro intro-emphasis">
                 Apúntate abajo y recibe gratis la guía en la que explico <strong> cómo conseguir ingresos estables sin seguir llenando tu agenda y sin cancelaciones👇</strong>
