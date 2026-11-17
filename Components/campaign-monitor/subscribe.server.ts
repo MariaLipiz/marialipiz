@@ -21,7 +21,7 @@ export async function subscribeToCampaignMonitor(email: string): Promise<Subscri
         EmailAddress: email,
         Resubscribe: true,
         RestartSubscriptionBasedAutoresponders: true,
-        ConsentToTrack: "No",
+        ConsentToTrack: "Yes",
       }),
       signal: controller.signal,
       cache: "no-store",
