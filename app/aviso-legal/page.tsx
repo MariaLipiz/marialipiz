@@ -1,6 +1,14 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import NewsletterForm from "../../Components/NewsletterForm";
 import SiteFooter from "../../Components/SiteFooter";
+
+export const metadata: Metadata = {
+  title: "Aviso legal · María Lipiz",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function AvisoLegal() {
   return (
